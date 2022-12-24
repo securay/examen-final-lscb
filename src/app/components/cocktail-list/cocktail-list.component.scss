@@ -1,0 +1,41 @@
+mat-nav-list {
+  min-height: 200px;
+  max-height: 500px;
+  overflow: auto;
+  border: solid #fff 1px;
+}
+
+mat-list-item {
+    height: 87px !important;
+}
+
+a {
+  font-size: 24px;
+  color: white;
+}
+
+.cocktail-list {
+  min-width: 150px;
+  width: 90%;
+  height: 600px;
+  border: 1px;
+}
+
+.cocktail-item {
+    height: 64px;
+}
+
+img {
+  object-fit: cover;
+  width: 100%;
+  height: 80px;
+}
+
+.col-10 {
+    line-height: 80px;
+}
+
+.col-2 {
+  display: flex;
+  justify-content: center;
+}

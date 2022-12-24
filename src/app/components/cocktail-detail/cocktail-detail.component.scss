@@ -1,0 +1,53 @@
+@import "/src/styles.scss";
+
+h1 {
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+
+  @include breakpoint(tablet) {
+    font-size: 40px;
+  }
+}
+
+h2 {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+
+  @include breakpoint(tablet) {
+    font-size: 30px;
+  }
+}
+
+img {
+  object-fit: cover;
+  width: 100%;
+  height: 450px;
+
+  @include breakpoint(tablet) {
+    height: 700px;
+  }
+}
+
+.mat-mdc-list-item-title {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.mat-mdc-list-item-line {
+  font-size: 18px;
+}
+
+.container {
+  width: 100%;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+}
+
+.no-wrap {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

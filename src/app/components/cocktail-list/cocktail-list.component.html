@@ -1,0 +1,66 @@
+<section class="container">
+  <div class="cocktail-list">
+    <div class="grid">
+      <div class="col-12">
+        <app-breadcrumbs [paths]="breadcrumbs"></app-breadcrumbs>
+      </div>
+    </div>
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>  
+          Buscar Bebidas por Nombre
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-form-field class="full-width">
+          <input
+            matInput
+            [(ngModel)]="selectedDrink"
+            [matAutocomplete]="auto"
+            [formControl]="searchDrinkCtrl"
+            placeholder="Ingrese un nombre de bebida (Mín 3 Caracteres)"
+          />
+          <button
+            *ngIf="selectedDrink"
+            matSuffix
+            mat-icon-button
+            aria-label="Clear"
+            (click)="clearSelection()"
+          >
+            <mat-icon>close</mat-icon>
+          </button>
+          <mat-autocomplete
+            [panelWidth]="400"
+            #auto="matAutocomplete"
+            (optionSelected)="onSelected()"
+            [displayWith]="displayWith"
+          >
+            <mat-option *ngIf="isLoading" class="is-loading"
+              >Cargando...</mat-option
+            >
+            <ng-container *ngIf="!isLoading">
+              <mat-option *ngFor="let drink of filteredDrinks" [value]="drink">
+                <span
+                  ><b>{{ drink.strDrink }}</b></span
+                >
+              </mat-option>
+            </ng-container>
+          </mat-autocomplete>
+        </mat-form-field>
+        <mat-nav-list role="list">
+          <mat-list-item
+            *ngFor="let drink of filteredDrinks"
+            (click)="showInfo(drink.idDrink)"
+            role="listitem"
+            class="cocktail-item"
+          >
+          <img matListItemAvatar [src]="drink.strDrinkThumb" [alt]="drink.strDrink" />
+          <a matListItemTitle [routerLink]="['detail', drink.idDrink]" class="cocktail-name">{{
+            drink.strDrink
+          }}</a>
+          </mat-list-item>
+        </mat-nav-list>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</section>

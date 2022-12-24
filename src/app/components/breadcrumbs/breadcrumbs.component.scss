@@ -1,0 +1,37 @@
+a.disabled {
+  pointer-events: none;
+  cursor: default;
+  font-weight: bolder;
+}
+
+.cbreadcrumb {
+  margin-top: 25px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.cbreadcrumb ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cbreadcrumb li:not(:last-child)::after {
+  display: inline-block;
+  margin-left: 5px;
+  content: "→";
+}
+
+.cbreadcrumb li {
+  color: #fff;
+  padding: 5px;
+}
+
+.cbreadcrumb a {
+  color: #fff;
+  font-size: 18px;
+  text-decoration: none; 
+}

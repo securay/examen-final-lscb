@@ -1,0 +1,9 @@
+<nav aria-label="Breadcrumb" class="cbreadcrumb">
+<ul>
+  <li *ngFor="let path of paths">
+    <a [routerLink]="path.url" [ngClass]="{ disabled: !path.enabled }">{{
+      path.description
+    }}</a>
+  </li>
+</ul>
+</nav>
